@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">My Portfolio</div>
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-item active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#about" class="nav-item"><i class="fas fa-user"></i> About</a></li>
+                    <li><a href="#cv" class="nav-item"><i class="fas fa-file-alt"></i> CV</a></li>
+                    <li><a href="#contact" class="nav-item"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="profile-avatar">
+                    <img src="https://via.placeholder.com/150" alt="Profile Image" class="avatar-img">
+                </div>
+                <h1>Hello, I'm <span class="highlight">Your Name</span></h1>
+                <p class="subtitle">Professional Title | Specialization</p>
+                <div class="cta-buttons">
+                    <a href="#cv" class="btn primary"><i class="fas fa-file-alt"></i> View CV</a>
+                    <a href="#about" class="btn secondary"><i class="fas fa-info-circle"></i> Learn More</a>
+                </div>
+                <div class="social-links">
+                    <a href="#" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-user"></i> About Me</h2>
+            <div class="section-divider"></div>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p>Welcome to my personal website! I am a passionate professional with expertise in [Your Field]. With [X] years of experience, I've developed a strong background in [specific skills or areas].</p>
+                    <p>My approach combines creative thinking with analytical problem-solving to deliver innovative solutions. I believe in continuous learning and staying updated with the latest trends in my field.</p>
+                    <p>When I'm not working, you can find me [personal interests/hobbies] or exploring new technologies and ideas to expand my knowledge base.</p>
+                    
+                    <div class="about-cards">
+                        <div class="about-card">
+                            <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+                            <h3>Education</h3>
+                            <p>Degree in [Your Field]</p>
+                        </div>
+                        <div class="about-card">
+                            <div class="card-icon"><i class="fas fa-briefcase"></i></div>
+                            <h3>Experience</h3>
+                            <p>[X] years of experience</p>
+                        </div>
+                        <div class="about-card">
+                            <div class="card-icon"><i class="fas fa-award"></i></div>
+                            <h3>Achievements</h3>
+                            <p>Multiple awards & certifications</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cv" class="cv">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-file-alt"></i> Curriculum Vitae</h2>
+            <div class="section-divider"></div>
+            <div class="cv-actions">
+                <a href="#" download class="btn primary"><i class="fas fa-download"></i> Download CV (PDF)</a>
+            </div>
+            
+            <div class="cv-content">
+                <div class="cv-section">
+                    <div class="section-header">
+                        <i class="fas fa-graduation-cap section-icon"></i>
+                        <h3>Education</h3>
+                    </div>
+                    <div class="cv-item">
+                        <div class="cv-year">20XX - 20XX</div>
+                        <div class="cv-details">
+                            <h4>Degree Name</h4>
+                            <p class="cv-institution">University Name</p>
+                            <p>Brief description of your studies, achievements, or thesis.</p>
+                            <div class="tags">
+                                <span class="tag">Relevant Course 1</span>
+                                <span class="tag">Relevant Course 2</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cv-item">
+                        <div class="cv-year">20XX - 20XX</div>
+                        <div class="cv-details">
+                            <h4>Previous Degree</h4>
+                            <p class="cv-institution">Institution Name</p>
+                            <p>Brief description of your studies and experiences.</p>
+                            <div class="tags">
+                                <span class="tag">Relevant Course 3</span>
+                                <span class="tag">Relevant Course 4</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cv-section">
+                    <div class="section-header">
+                        <i class="fas fa-briefcase section-icon"></i>
+                        <h3>Professional Experience</h3>
+                    </div>
+                    <div class="cv-item">
+                        <div class="cv-year">20XX - Present</div>
+                        <div class="cv-details">
+                            <h4>Job Title</h4>
+                            <p class="cv-institution">Company Name</p>
+                            <ul>
+                                <li>Key responsibility or achievement</li>
+                                <li>Another major contribution</li>
+                                <li>Technical or leadership skills demonstrated</li>
+                            </ul>
+                            <div class="tags">
+                                <span class="tag">Skill Used 1</span>
+                                <span class="tag">Skill Used 2</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cv-item">
+                        <div class="cv-year">20XX - 20XX</div>
+                        <div class="cv-details">
+                            <h4>Previous Position</h4>
+                            <p class="cv-institution">Previous Company</p>
+                            <ul>
+                                <li>Key responsibility or achievement</li>
+                                <li>Another major contribution</li>
+                            </ul>
+                            <div class="tags">
+                                <span class="tag">Skill Used 3</span>
+                                <span class="tag">Skill Used 4</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cv-section">
+                    <div class="section-header">
+                        <i class="fas fa-tools section-icon"></i>
+                        <h3>Skills</h3>
+                    </div>
+                    <div class="skills-container">
+                        <div class="skill-category">
+                            <h4>Technical Skills</h4>
+                            <div class="skill-bars">
+                                <div class="skill-item">
+                                    <div class="skill-name">Skill 1</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-name">Skill 2</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-name">Skill 3</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 75%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Soft Skills</h4>
+                            <div class="skill-list">
+                                <span class="skill-tag">Communication</span>
+                                <span class="skill-tag">Leadership</span>
+                                <span class="skill-tag">Problem Solving</span>
+                                <span class="skill-tag">Teamwork</span>
+                                <span class="skill-tag">Time Management</span>
+                                <span class="skill-tag">Adaptability</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-envelope"></i> Get In Touch</h2>
+            <div class="section-divider"></div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p><a href="mailto:email@example.com">email@example.com</a></p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Phone</h3>
+                        <p><a href="tel:+12345678901">+1 234 567 890</a></p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Location</h3>
+                        <p>City, Country</p>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <h3>Send Me a Message</h3>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary"><i class="fas fa-paper-plane"></i> Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Your Name</h3>
+                    <p>Professional Title</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#cv">CV</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect With Me</h4>
+                    <div class="social-links">
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year">2023</span> Your Name. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Update active nav item
+                document.querySelectorAll('.nav-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+        
+        // Mobile navigation toggle
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav-links');
+        
+        if (burger) {
+            burger.addEventListener('click', () => {
+                nav.classList.toggle('nav-active');
+                burger.classList.toggle('toggle');
+            });
+        }
+    </script>
+</body>
+</html>

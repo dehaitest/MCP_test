@@ -1,0 +1,22 @@
+{
+  "name": "21stdev/magic-mcp",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "tsc"
+  },
+  "author": "serafim@21st.dev",
+  "license": "ISC",
+  "description": "Magic MCP",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.5.0",
+    "@types/axios": "^0.9.36",
+    "axios": "^1.7.9",
+    "typescript": "^5.7.3",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.4"
+  }
+}

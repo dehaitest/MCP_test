@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Music Player</title>
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #4f46e5;
+            --background-dark: #1e1b4b;
+            --text-light: #e0e7ff;
+            --text-dark: #1e1b4b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--background-dark), #312e81);
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 1rem;
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 1rem 2rem;
+            flex-grow: 1;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #818cf8, #6366f1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        .player-container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .music-info {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .album-art {
+            width: 300px;
+            height: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .album-art img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .track-info {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .track-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .track-info h3 {
+            font-size: 1.5rem;
+            opacity: 0.8;
+            margin-bottom: 2rem;
+        }
+
+        .controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .control-btn {
+            background: none;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .control-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .play-btn {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .progress-container {
+            background: rgba(255, 255, 255, 0.1);
+            height: 6px;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-bar {
+            background: var(--primary-color);
+            height: 100%;
+            border-radius: 3px;
+            width: 30%;
+        }
+
+        .time-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .playlist {
+            margin-top: 3rem;
+        }
+
+        .playlist h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .playlist-items {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .playlist-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .playlist-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .playlist-item img {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .playlist-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .playlist-item p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .music-info {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .album-art {
+                width: 250px;
+                height: 250px;
+            }
+
+            .track-info {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">MusicFlow</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#discover">Discover</a>
+                <a href="#library">Library</a>
+                <a href="#playlists">Playlists</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Experience Music Like Never Before</h1>
+            <p>Stream your favorite tracks with stunning visuals and crystal clear audio</p>
+        </section>
+
+        <div class="player-container">
+            <div class="music-info">
+                <div class="album-art">
+                    <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" alt="Album Art">
+                </div>
+                <div class="track-info">
+                    <h2>Midnight Serenade</h2>
+                    <h3>Luna Eclipse</h3>
+                    <div class="controls">
+                        <button class="control-btn">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 20L9 12L19 4V20Z"></path>
+                            </svg>
+                        </button>
+                        <button class="control-btn play-btn">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 3L19 12L5 21V3Z"></path>
+                            </svg>
+                        </button>
+                        <button class="control-btn">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 4L15 12L5 20V4Z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar"></div>
+                    </div>
+                    <div class="time-info">
+                        <span>2:30</span>
+                        <span>4:15</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="playlist">
+            <h2>Popular Tracks</h2>
+            <div class="playlist-items">
+                <div class="playlist-item">
+                    <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" alt="Track 1">
+                    <h3>Summer Breeze</h3>
+                    <p>Coastal Waves</p>
+                </div>
+                <div class="playlist-item">
+                    <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" alt="Track 2">
+                    <h3>Electric Dreams</h3>
+                    <p>Neon Pulse</p>
+                </div>
+                <div class="playlist-item">
+                    <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" alt="Track 3">
+                    <h3>Mountain Echo</h3>
+                    <p>Forest Spirit</p>
+                </div>
+                <div class="playlist-item">
+                    <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" alt="Track 4">
+                    <h3>Urban Rhythm</h3>
+                    <p>City Lights</p>
+                </div>
+                <div class="playlist-item">
+                    <img src="https://images.unsplash.com/photo-1483412033650-1015ddeb83d1?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" alt="Track 5">
+                    <h3>Midnight Jazz</h3>
+                    <p>Blue Note</p>
+                </div>
+                <div class="playlist-item">
+                    <img src="https://images.unsplash.com/photo-1484755560615-a4c64e778a6c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" alt="Track 6">
+                    <h3>Neon Lights</h3>
+                    <p>Synthwave</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html> 

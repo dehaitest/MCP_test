@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recent Papers - LLM-based Autonomous Agents</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --background-color: #f8f9fa;
+            --text-color: #2c3e50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        nav {
+            background-color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            max-width: 1200px;
+            margin: 0 auto;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .paper-section {
+            margin-bottom: 4rem;
+        }
+
+        .paper-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .paper-title {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .paper-meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .paper-abstract {
+            margin-bottom: 1.5rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.2rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            margin: 0.2rem;
+        }
+
+        .key-findings {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+
+        .key-findings h4 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .filter-section {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-button {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 20px;
+            background: var(--secondary-color);
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .filter-button:hover {
+            background: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Recent Research Papers</h1>
+        <p>Latest Developments in LLM-based Autonomous Agents</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="research.html">Overview</a></li>
+            <li><a href="papers.html">Papers</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section class="filter-section">
+            <h2>Filter Papers</h2>
+            <div class="filter-buttons">
+                <button class="filter-button">All</button>
+                <button class="filter-button">Multi-Agent Systems</button>
+                <button class="filter-button">Evaluation</button>
+                <button class="filter-button">Applications</button>
+                <button class="filter-button">Architecture</button>
+            </div>
+        </section>
+
+        <section class="paper-section">
+            <div class="paper-card">
+                <div class="paper-header">
+                    <div>
+                        <h3 class="paper-title">Exploring Autonomous Agents through the Lens of Large Language Models: A Review</h3>
+                        <div class="paper-meta">
+                            <span>Barua (2024)</span>
+                            <span>arXiv:2404.04442</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="tag">Survey</span>
+                        <span class="tag">Review</span>
+                    </div>
+                </div>
+                <div class="paper-abstract">
+                    <p>A comprehensive review examining the integration of LLMs into autonomous agents, discussing challenges in multimodality, human value alignment, and evaluation methods. The paper explores techniques like prompting, reasoning, and tool utilization while analyzing evaluation platforms such as AgentBench and WebArena.</p>
+                </div>
+                <div class="key-findings">
+                    <h4>Key Findings:</h4>
+                    <ul>
+                        <li>LLMs show promise in achieving human-level intelligence through web knowledge acquisition</li>
+                        <li>Evaluation frameworks need standardization for consistent agent assessment</li>
+                        <li>Challenges persist in multimodal integration and hallucination mitigation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="paper-card">
+                <div class="paper-header">
+                    <div>
+                        <h3 class="paper-title">The Rise and Potential of Large Language Model Based Agents: A Survey</h3>
+                        <div class="paper-meta">
+                            <span>Xi et al. (2023)</span>
+                            <span>arXiv:2309.07864</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="tag">Survey</span>
+                        <span class="tag">Potential</span>
+                    </div>
+                </div>
+                <div class="paper-abstract">
+                    <p>This survey examines the emerging field of LLM-based agents, focusing on their construction, capabilities, and potential applications. The paper provides insights into current limitations and future research directions.</p>
+                </div>
+                <div class="key-findings">
+                    <h4>Key Findings:</h4>
+                    <ul>
+                        <li>LLM-based agents show promising results in complex task execution</li>
+                        <li>Memory management and persistence remain critical challenges</li>
+                        <li>Multi-agent systems offer enhanced problem-solving capabilities</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="paper-card">
+                <div class="paper-header">
+                    <div>
+                        <h3 class="paper-title">AgentBench: Evaluating LLMs as Agents</h3>
+                        <div class="paper-meta">
+                            <span>Liu et al. (2023)</span>
+                            <span>arXiv:2308.03688</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="tag">Evaluation</span>
+                        <span class="tag">Benchmark</span>
+                    </div>
+                </div>
+                <div class="paper-abstract">
+                    <p>Introduces a comprehensive benchmark framework for evaluating LLM-based agents across various tasks and scenarios. The paper presents evaluation metrics and methodologies for assessing agent performance.</p>
+                </div>
+                <div class="key-findings">
+                    <h4>Key Findings:</h4>
+                    <ul>
+                        <li>Standardized evaluation metrics for agent performance assessment</li>
+                        <li>Identification of key areas for agent improvement</li>
+                        <li>Comparative analysis of different LLM architectures in agent tasks</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html> 

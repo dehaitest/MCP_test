@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Agents Research: Academic Works</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>AI Agents Research</h1>
+      <p class="subtitle">Exploring the landscape of autonomous AI agent systems</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <h2>Popular Academic Works on AI Agents</h2>
+      <p>The field of AI agents has seen significant advancement in recent years. This page summarizes three influential academic works that have shaped our understanding of autonomous AI systems and their capabilities.</p>
+    </section>
+
+    <section class="academic-works">
+      <div class="academic-work" id="work-1">
+        <div class="work-header">
+          <h3>ReAct: Synergizing Reasoning and Acting in Language Models</h3>
+          <a href="https://arxiv.org/abs/2210.03629" target="_blank" rel="noopener noreferrer" class="source-link">
+            Source <span class="external-icon">↗</span>
+          </a>
+        </div>
+        <div class="work-badge">Academic Paper (2022)</div>
+        <div class="work-content">
+          <div class="work-section">
+            <h4>Summary</h4>
+            <p>ReAct introduces a framework that combines reasoning traces and task-specific actions in large language models (LLMs) in an interleaved manner. This integration creates a powerful synergy: reasoning traces help models induce, track, and update action plans while handling exceptions, while actions enable the model to interface with external sources like knowledge bases to gather additional information. Applied to question answering (HotpotQA), fact verification (Fever), and interactive decision making tasks (ALFWorld and WebShop), ReAct demonstrates impressive capabilities over baseline methods without reasoning components. The approach produces human-like task-solving trajectories that are more interpretable and trustworthy.</p>
+          </div>
+          <div class="work-separator"></div>
+          <div class="work-section">
+            <h4>Future Directions</h4>
+            <p>Future work in the ReAct paradigm includes extending the approach to more complex domains requiring specialized reasoning, improving the model's ability to recover from errors through better exception handling, and exploring how to balance the verbosity of reasoning traces with computational efficiency. Additionally, research is focusing on how ReAct techniques can be fine-tuned for specific domains and integrated with other emerging LLM capabilities to create more robust autonomous systems.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="academic-work" id="work-2">
+        <div class="work-header">
+          <h3>AutoGPT: An Autonomous GPT-4 Experiment</h3>
+          <a href="https://github.com/Significant-Gravitas/AutoGPT" target="_blank" rel="noopener noreferrer" class="source-link">
+            Source <span class="external-icon">↗</span>
+          </a>
+        </div>
+        <div class="work-badge">Open Source Project (2023)</div>
+        <div class="work-content">
+          <div class="work-section">
+            <h4>Summary</h4>
+            <p>AutoGPT represents one of the first implementations of autonomous GPT-4 agents capable of breaking down complex goals into manageable tasks and executing them with minimal human intervention. The architecture employs a sophisticated memory system combining both short-term and long-term storage, allowing the agent to maintain context across long sequences of actions. AutoGPT pioneered the implementation of a feedback loop where the agent can reason about its actions, evaluate their effectiveness, and adjust its plans accordingly. Its modular command structure allows the agent to interact with various external tools and APIs, extending the capabilities beyond what a standard language model could accomplish alone.</p>
+          </div>
+          <div class="work-separator"></div>
+          <div class="work-section">
+            <h4>Future Directions</h4>
+            <p>Future development of AutoGPT aims to enhance collaborative multi-agent systems where multiple specialized agents can work together on complex tasks. Research is also focusing on improving the agent's planning capabilities through more sophisticated hierarchical task decomposition, developing better safety and alignment mechanisms to ensure agents act according to human values, and creating more efficient memory systems that can scale to very long-running tasks. The AutoGPT ecosystem is moving toward standardized protocols for agent communication and becoming a platform for continuous agent learning from experience.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="academic-work" id="work-3">
+        <div class="work-header">
+          <h3>LangChain: Building Applications with LLMs through Composability</h3>
+          <a href="https://arxiv.org/abs/2310.03722" target="_blank" rel="noopener noreferrer" class="source-link">
+            Source <span class="external-icon">↗</span>
+          </a>
+        </div>
+        <div class="work-badge">Framework Paper (2023)</div>
+        <div class="work-content">
+          <div class="work-section">
+            <h4>Summary</h4>
+            <p>LangChain introduces a composable framework for developing applications powered by language models. It specifically addresses the challenges of building agentic systems by providing structured components for memory, reasoning chains, and tool integration. The framework's Agent abstractions enable developers to create systems where LLMs can decide on actions to take, execute those actions, observe outcomes, and determine next steps. LangChain popularized concepts such as tool-augmented agents, retrieval-augmented generation, and conversational memory patterns that have become standard in the field. The paper demonstrates how these components can be composed to create sophisticated applications ranging from question-answering systems to autonomous research assistants.</p>
+          </div>
+          <div class="work-separator"></div>
+          <div class="work-section">
+            <h4>Future Directions</h4>
+            <p>Future research directions for LangChain include developing more sophisticated agent architectures that can better handle complex reasoning and planning tasks, improving the integration of multi-agent systems where agents with different specializations can collaborate effectively, creating more robust evaluation frameworks to benchmark agent performance across different tasks, and exploring how agents can learn and improve from experience over time. Additionally, research is investigating agent orchestration at scale, where multiple agents can be efficiently deployed and managed in production environments.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 AI Agents Research</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html> 

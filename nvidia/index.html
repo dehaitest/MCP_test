@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NVIDIA Stock Analysis 2024</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary-color: #76b900;
+            --secondary-color: #1a1a1a;
+            --text-color: #333;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --chart-grid: #e0e0e0;
+            --up-color: #00c853;
+            --down-color: #ff1744;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--secondary-color), #000000);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .stock-price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .price-change {
+            font-size: 1.2rem;
+            color: var(--up-color);
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .metric {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .metric-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .metric-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 400px;
+            margin: 2rem 0;
+        }
+
+        .analysis-section {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .analysis-section {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tag-positive {
+            background-color: rgba(0, 200, 83, 0.1);
+            color: var(--up-color);
+        }
+
+        .tag-negative {
+            background-color: rgba(255, 23, 68, 0.1);
+            color: var(--down-color);
+        }
+
+        .tag-neutral {
+            background-color: rgba(158, 158, 158, 0.1);
+            color: #757575;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div>
+                <h1>NVIDIA (NVDA)</h1>
+                <p>Stock Analysis & Insights</p>
+            </div>
+            <div class="price-info">
+                <div class="stock-price">$119.53</div>
+                <div class="price-change">-10.99% YTD</div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="grid">
+            <div class="card metric">
+                <span class="metric-label">Revenue (TTM)</span>
+                <span class="metric-value">$130.50B</span>
+                <span class="tag tag-positive">+75.45% Margin</span>
+            </div>
+            <div class="card metric">
+                <span class="metric-label">Earnings (TTM)</span>
+                <span class="metric-value">$72.88B</span>
+                <span class="tag tag-positive">+55.85% Margin</span>
+            </div>
+            <div class="card metric">
+                <span class="metric-label">Market Rating</span>
+                <span class="metric-value">Strong Buy</span>
+                <span class="tag tag-positive">$172.22 Target</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Stock Performance</h2>
+            <div class="chart-container">
+                <canvas id="stockChart"></canvas>
+            </div>
+        </div>
+
+        <div class="analysis-section">
+            <div class="card">
+                <h2>Analysis & Insights</h2>
+                <div style="margin-top: 1rem;">
+                    <h3>Growth Drivers</h3>
+                    <ul style="margin: 1rem 0; list-style-position: inside;">
+                        <li>Continued AI chip demand and data center growth</li>
+                        <li>Strong position in GPU and accelerated computing</li>
+                        <li>Expanding partnerships in automotive and cloud sectors</li>
+                    </ul>
+
+                    <h3>Technical Analysis</h3>
+                    <p style="margin: 1rem 0;">
+                        NVIDIA has experienced some volatility in early 2024, with the stock currently trading at $119.53. Despite a YTD decline of 10.99%, the company maintains strong fundamentals with key support levels around the $110-115 range. The stock shows a healthy trading volume of 337.87M (10-day average), indicating active market participation.
+                    </p>
+
+                    <h3>Investment Outlook</h3>
+                    <p style="margin: 1rem 0;">
+                        Wall Street analysts maintain a "Strong Buy" rating with a 12-month price target of $172.22. The company's robust financial performance, with a 75.45% gross margin and 55.85% net margin, demonstrates operational efficiency. The current P/E ratio of 38.33 suggests a premium valuation, justified by NVIDIA's market leadership in AI and data center solutions. Key catalysts include the upcoming GTC Conference and continued AI infrastructure expansion.
+                    </p>
+
+                    <h3>Risk Factors</h3>
+                    <p style="margin: 1rem 0;">
+                        Investors should consider market volatility, semiconductor industry cycles, and potential regulatory changes in AI technology. The stock's beta of 1.91 indicates higher volatility compared to the broader market. Additionally, geopolitical tensions and trade policies could impact supply chains and international sales.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Key Metrics</h2>
+                <div style="margin-top: 1rem;">
+                    <div class="metric">
+                        <span class="metric-label">P/E Ratio (TTM)</span>
+                        <span class="metric-value">38.33</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Market Cap</span>
+                        <span class="metric-value">$2.75T</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">52-Week High</span>
+                        <span class="metric-value">$153.13</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">52-Week Low</span>
+                        <span class="metric-value">$75.61</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Stock price chart data
+        const ctx = document.getElementById('stockChart').getContext('2d');
+        const stockData = {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            datasets: [{
+                label: 'NVDA Stock Price 2024',
+                data: [153.13, 145.20, 130.50, 119.53, null, null, null, null, null, null, null, null],
+                borderColor: '#76b900',
+                backgroundColor: 'rgba(118, 185, 0, 0.1)',
+                fill: true,
+                tension: 0.4
+            }]
+        };
+
+        new Chart(ctx, {
+            type: 'line',
+            data: stockData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.1)'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html> 

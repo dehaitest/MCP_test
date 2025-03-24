@@ -1,0 +1,230 @@
+/* Base styles */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #1abc9c;
+  --text-color: #333;
+  --text-light: #6c7680;
+  --background-color: #fff;
+  --background-alt: #f8f9fa;
+  --border-color: #e5e7eb;
+  --border-radius: 6px;
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+h1 {
+  font-size: 2.5rem;
+  letter-spacing: -0.025em;
+}
+
+h2 {
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+/* Header */
+header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 4rem 0;
+  margin-bottom: 3rem;
+}
+
+header h1 {
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+header .subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0;
+}
+
+/* Main content */
+main {
+  margin-bottom: 5rem;
+}
+
+.intro {
+  margin-bottom: 3rem;
+  max-width: 800px;
+}
+
+.intro p {
+  color: var(--text-light);
+  font-size: 1.125rem;
+}
+
+/* Academic works */
+.academic-works {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.academic-work {
+  background-color: var(--background-alt);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+}
+
+.academic-work:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.work-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.work-header h3 {
+  margin-bottom: 0.25rem;
+  padding-right: 1rem;
+}
+
+.source-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.875rem;
+  color: var(--text-light);
+  white-space: nowrap;
+}
+
+.source-link:hover {
+  color: var(--secondary-color);
+}
+
+.external-icon {
+  margin-left: 0.25rem;
+  font-size: 0.75rem;
+}
+
+.work-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  background-color: rgba(52, 152, 219, 0.1);
+  color: var(--secondary-color);
+  border-radius: var(--border-radius);
+  margin-bottom: 1.25rem;
+}
+
+.work-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.work-section h4 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  color: var(--primary-color);
+}
+
+.work-section p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+.work-separator {
+  height: 1px;
+  background-color: var(--border-color);
+  width: 100%;
+}
+
+/* Footer */
+footer {
+  background-color: var(--background-alt);
+  border-top: 1px solid var(--border-color);
+  padding: 2rem 0;
+  color: var(--text-light);
+  font-size: 0.875rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  header {
+    padding: 3rem 0;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  .work-header {
+    flex-direction: column;
+  }
+
+  .source-link {
+    margin-top: 0.5rem;
+  }
+} 
