@@ -13,12 +13,9 @@ You can run the example servers using either `npx` or Docker. Each server is loc
 
 ---
 
-## 🗂 Filesystem Server
-
-This is a code generation agent that reads your requirements and produces runnable code in a local directory.
+`codegen.py` is a code generation agent that reads your requirements and produces runnable code in a local directory.
 
 ### Setup
-
 
 1. Write a configuration file named `server.config`. This file should specify the target directory path where the output files will be written by the agent.
 
