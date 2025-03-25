@@ -58,5 +58,3 @@ These are projects created by the AI code generation agent:
 - `nvidia/` – A tech-themed landing page
 - `personal_website/` – A developer portfolio site
 - `music_player/` – A basic web-based music player
-
-Each folder contains the generated frontend and backend code, ready to deploy or build upon.
